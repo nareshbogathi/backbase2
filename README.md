@@ -22,3 +22,7 @@ The helm charts in the Jenkins repo can be listed with the command:
 ```
 $ helm search repo jenkinsci
 ```
+
+### - Create a pipeline using jenkinsfile that builds a docker image to run a sample war 
+
+![alt text](./img.png)
