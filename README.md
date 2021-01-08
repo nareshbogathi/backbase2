@@ -10,6 +10,7 @@ If you don’t have Helm command line interface installed and configured locally
 
 Install Helm
 To install Helm CLI, follow the instructions from the Installing Helm page.
+https://helm.sh/docs/intro/install/
 
 Configure Helm
 Once Helm is installed and set up properly, add the Jenkins repo as follows:
