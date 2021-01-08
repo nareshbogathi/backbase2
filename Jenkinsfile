@@ -9,18 +9,18 @@ node {
 
   stage('Create Docker Image') {
     dir('webapp') {
-      docker.build("arungupta/docker-jenkins-pipeline:${env.BUILD_NUMBER}")
+      docker.build("nareshbogathi/backbase2:${env.BUILD_NUMBER}")
     }
   }
 
   stage ('Run Application') {
     try {
-      // Start database container here
-      // sh 'docker run -d --name db -p 8091-8093:8091-8093 -p 11210:11210 arungupta/oreilly-couchbase:latest'
+      // Build and run continer
+      // docker build -t nareshbogathi/backbase2:latest .
+      // 'docker run -d --name backbase2 -p 8080:8080 nareshbogathi/backbase2:latest'
 
       // Run application using Docker image
-      sh "DB=`docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' db`"
-      sh "docker run -e DB_URI=$DB arungupta/docker-jenkins-pipeline:${env.BUILD_NUMBER}"
+        "docker run -e APP_URI=$backbase2 arungupta/docker-jenkins-pipeline:${env.BUILD_NUMBER}"
 
       // Run tests using Maven
       //dir ('webapp') {
