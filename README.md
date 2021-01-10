@@ -25,19 +25,25 @@ $ helm search repo jenkinsci
 
 ### - Create a pipeline using jenkinsfile that builds a docker image to run a sample war 
 
-![alt text](.img/img.png)
+![alt text](./img/img.png)
 
-
+```
 minikube start
-
+```
+```
 minikube service list
-
+```
+```
 brew install helm
-
+```
+```
 helm repo add bitnami https://charts.bitnami.com/bitnami
-
+```
+```
 helm install my-release bitnami/jenkins
+```
 
+```
 NLMB2B16-C61554:tmp nareshbogathi$ helm install my-release bitnami/jenkins
 NAME: my-release
 LAST DEPLOYED: Sun Jan 10 17:43:38 2021
@@ -60,10 +66,9 @@ NOTES:
 
   echo Username: user
   echo Password: $(kubectl get secret --namespace default my-release-jenkins -o jsonpath="{.data.jenkins-password}" | base64 --decode)
-
+```
 
 http://192.168.64.2:31390
 
-  ![alt text](.img/img1.png)
+  ![alt text](./img/img1.png)
 
-  
